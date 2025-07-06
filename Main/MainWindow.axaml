@@ -1,0 +1,53 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="avalonia5.MainWindow"
+        Title="avalonia5">
+    <Grid>
+        <Grid.RowDefinitions>
+             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Menu Grid.Row="0">
+            <MenuItem Header="_File">
+                <MenuItem Header="_Open" Click="fileOpen_Click"/>
+                <MenuItem Header="_Save"/>
+                <MenuItem Header="E_xit" Click="fileExit_Click"/>
+            </MenuItem>
+            <MenuItem Header="_Edit">
+                <MenuItem Header="_Copy"/>
+                <MenuItem Header="_Paste"/>
+            </MenuItem>
+            <MenuItem Header="Help">
+                <MenuItem Header="About" Click="helpAbout_Click"/>
+            </MenuItem>            
+        </Menu> 
+
+        <Grid Grid.Row="1"
+            Background="LightBlue">
+            <Border Padding="10">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="File" VerticalAlignment="Center"/>
+                <TextBox Name="txtFile" Margin="10,0" Width="400"/>
+                <Button Name="btnFile" Content="..."
+                    Click="btnFile_Click"/>
+            </StackPanel>
+            </Border>
+        </Grid>
+
+        <Grid Grid.Row="2"
+            Background="LightYellow">
+            <Border Padding="10">
+            <Grid>
+                <TextBox Name="txtContent" Text="..."
+                    VerticalAlignment="Stretch"/>
+            </Grid>
+            </Border>
+        </Grid>
+
+    </Grid>
+</Window>
